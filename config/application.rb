@@ -1,4 +1,6 @@
 require_relative "boot"
+require "rails/all"
+Bundler.require(*Rails.groups)
 
 require "rails/all"
 
@@ -10,6 +12,7 @@ module SampleApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
+    config.active_storage.variant_processor = :mini_magick
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
